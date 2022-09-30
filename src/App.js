@@ -5,8 +5,6 @@ import LinkResult from './LinkResult';
 import iconGit from './assets/iconGit.svg';
 import iconTt from './assets/iconTt.svg';
 import iconIns from './assets/iconIns.svg';
-import setShowAlert from './LinkResult.js'
-import { Alert } from 'antd';
  
 function App() {
 
