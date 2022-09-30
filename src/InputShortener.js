@@ -11,7 +11,7 @@ const handleClick = () =>{
 
     return(
         <div className="inputContainer">
-            <h1>Encurtador <span className="span">De Link</span></h1>
+            <h1>Encurtador De Link</h1>
             <span className="descriptions">Sua solução para links longos</span>
             <div>
                 <input type="text" placeholder="Paste a Link" value={value} onChange={e => setValue(e.target.value)} />

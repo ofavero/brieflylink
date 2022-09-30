@@ -1,27 +1,29 @@
-    import axios from "axios";
+import axios from "axios";
 import { useEffect, useState } from "react"
 import CopyToClipboard from "react-copy-to-clipboard";
-import Icon from './assets/icon.png';
+import Icon from "./assets/icon.svg";
 
 const LinkResult = ({inputValue}) =>{
     const [shortenLink, setShortenLink] = useState("");
     const [copied, setCopied] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [setShowAlert] = useState(false);
 
-    const fetchData = async () => {
-        try{
-            setLoading(true);
-            const res = await axios(`https://api.shrtco.de/v2/shorten?url=${inputValue}`);
-            setShortenLink(res.data.result.full_short_link);
-        } catch(err){
-            setError(err);
-        } finally{
-            setLoading(false);
-        }
-    }
+    
     
     useEffect(() => {
+        const fetchData = async () => {
+            try{
+                setLoading(true);
+                const res = await axios(`https://api.shrtco.de/v2/shorten?url=${inputValue}`);
+                setShortenLink(res.data.result.full_short_link);
+            } catch(err){
+                setError(err);
+            } finally{
+                setLoading(false);
+            }
+        }
         if(inputValue.length){
             fetchData();
         }
@@ -34,9 +36,8 @@ const LinkResult = ({inputValue}) =>{
         }, 1000)
 
         return () => clearTimeout(timer);
-
+        
     }, [copied]);
-
     
 
     if(loading) {
@@ -56,7 +57,7 @@ const LinkResult = ({inputValue}) =>{
                     text={shortenLink}
                     onCopy={() => setCopied(true)}
                     >
-                    <button className={copied ? "copied" : ""}><img src={Icon}></img></button>
+                    <button className={copied ? "copied" : ""}><img src={Icon} alt="Icon"></img></button>
                 </CopyToClipboard>
             </div>
             )}

@@ -17,11 +17,10 @@
 
 .inputContainer h1{
     font-family: Cambria, sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     color: white;
     margin-bottom: 0.1rem;
     font-weight: 500;
-    font-style: italic;
 }
 .inputContainer .span{
     font-style: normal;
@@ -33,7 +32,7 @@
     font-style: normal;
 }
 
-.inputContainer h1 span{
+.inputContainer h1{
     color: white;
 }
 
@@ -104,13 +103,14 @@
 }
 
 .result button{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.8rem;
     color: #000;
     cursor: pointer;
     background: yellow;
     border: none;
     font-weight: 700;
     border-radius: 25px;
+    width: 40px;
 }
 
 .result button.copied{
@@ -136,7 +136,26 @@
     transition: .4s;
 }
 
+.social-media a > img{
+    width: 40px;
+    height: 40px;
+}
+
 .social-media a:hover{
     transform: translateY(-10px);
     transition: .6s;
+}
+
+@media(max-width: 467px){
+    .inputContainer h1{
+        font-size: 2.5rem;
+    }
+}
+@media(max-width: 334px){
+    .inputContainer h1{
+        font-size: 2rem;
+    }
+    .inputContainer span.descriptions{
+        font-size: 0.9rem;
+    }
 }
