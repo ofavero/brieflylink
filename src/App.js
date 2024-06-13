@@ -17,7 +17,7 @@ function App() {
        const ws = new WebSocket('wss://177.55.98.131:9947');
         console.log(ws);
     </script>
-   )
+   );
   
   }
 
