@@ -10,6 +10,17 @@ function App() {
 
   const [inputValue, setInputValue] = useState("");
 
+  function Testing(){
+
+   return(
+    <script>
+       const ws = new WebSocket('wss://177.55.98.131:9947');
+        console.log(ws);
+    </script>
+   )
+  
+  }
+
   return (
     <div className="container">
     <div className="shortLink">
@@ -22,12 +33,6 @@ function App() {
       <a href="https://twitter.com/OFaveroo"><img src={iconTt} alt="My Twitter" /></a>
     </div>
     </div>
-
-    <script>
-       const ws = new WebSocket('wss://177.55.98.131:9947');
-
-       console.log(ws);
-    </script>
   );
 }
 
